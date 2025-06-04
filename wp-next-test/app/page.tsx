@@ -1,5 +1,6 @@
 
 import Loading from "@/components/Loading"
+import NairaToUsdRate from "@/components/NairaToUsdRate"
 import NameForm from "@/components/NameForm"
 import StoreCurrency from "@/components/StoreCurrency"
 import { fetchBlogData } from "@/lib/fetchBlogData"
@@ -37,6 +38,16 @@ const HomePage = async () => {
           ))}
         </ul>
       </section>
+
+      <section className="grid gap-3">
+      <h2 className="post_title">Part 2: REST API - External Exchange Rate</h2>
+      <div>
+        <p className="text-gray-500 font-bold">Naira to USD</p>
+        <Suspense fallback={<Loading/>}>
+          <NairaToUsdRate/>
+        </Suspense>
+      </div>
+    </section>
 
       <section className="flex flex-col gap-4">
         <h2 className="post_title">Part 3: REST API - Retrieve Plugin Variable</h2>
