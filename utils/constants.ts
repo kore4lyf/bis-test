@@ -1,0 +1,1 @@
+export const wordpressBaseUrl = "http://wp-headless-test.local"

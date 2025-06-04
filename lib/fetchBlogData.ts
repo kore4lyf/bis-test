@@ -1,12 +1,13 @@
-import { GraphQLClient, gql } from 'graphql-request';
-import { BlogData, IPostRequest } from "./types";
+import { GraphQLClient, gql } from 'graphql-request'
+import { BlogData, IPostRequest } from "../utils/types"
+import { wordpressBaseUrl } from "@/utils/constants"
 
 
 
 export async function fetchBlogData
 (): Promise<BlogData> {
-  const api = 'http://wp-headless-test.local/graphql';
-  const client = new GraphQLClient(api);
+  const api = `${wordpressBaseUrl}/graphql`
+  const client = new GraphQLClient(api)
 
   const query = gql`
     {
@@ -20,13 +21,13 @@ export async function fetchBlogData
         description
       }
     }
-  `;
+  `
 
-  const data:IPostRequest = await client.request(query);
+  const data:IPostRequest = await client.request(query)
 
   return {
     posts: data.posts.nodes,
     siteTitle: data.generalSettings.title,
     siteDescription: data.generalSettings.description,
-  };
+  }
 }

@@ -1,5 +1,6 @@
 
 import Loading from "@/components/Loading"
+import NameForm from "@/components/NameForm"
 import StoreCurrency from "@/components/StoreCurrency"
 import { fetchBlogData } from "@/lib/fetchBlogData"
 import { notFound } from "next/navigation"
@@ -7,9 +8,9 @@ import React, { Suspense } from 'react'
 
 const HomePage = async () => {
   
-  const { posts, siteTitle, siteDescription } = await fetchBlogData()
   
   let blogData
+  
 
   try {
     blogData = await fetchBlogData()
@@ -18,6 +19,8 @@ const HomePage = async () => {
   }
 
   if(!blogData) notFound()
+  
+  const { posts, siteTitle, siteDescription } = blogData
 
   return (
     <main className="grid gap-16">
@@ -40,6 +43,11 @@ const HomePage = async () => {
         <Suspense fallback={<Loading/>}>
           <StoreCurrency/>
         </Suspense>
+      </section>
+      
+      <section className="flex flex-col gap-4">
+        <h2 className="post_title">Part 4: REST API - Custom Name Form</h2>
+        <NameForm/>
       </section>
     </main>
   )
