@@ -1,13 +1,72 @@
-After testing the api with an api key:
-https://api.exchangerate.host/latest?base=NGN&symbols=USD
+Perfect! Here's a clean, minimal `README.md` just for your **Next.js project (`wp-next-test`)**.
 
-Result:
-{"success":false,"error":{"code":103,"type":"invalid_api_function"}}
+---
 
-Read their documentation and realise some changes have been made.
+### 📄 `wp-next-test/README.md`
 
-This worked.
+````markdown
+# wp-next-test – Next.js Frontend
 
-https://api.exchangerate.host/change?currencies=USD,NGN
+This is the frontend for the WordPress Headless CMS test using **Next.js App Router**, **GraphQL**, and **REST APIs**.
 
-{"success":true,"terms":"https:\/\/currencylayer.com\/terms","privacy":"https:\/\/currencylayer.com\/privacy","change":true,"start_date":"2025-06-03","end_date":"2025-06-04","source":"USD","quotes":{"USDUSD":{"start_rate":1,"end_rate":1,"change":0,"change_pct":0},"USDNGN":{"start_rate":1582.24939,"end_rate":1583.010016,"change":0.7606,"change_pct":0.0481}}}
+---
+
+## 🚀 Getting Started
+
+### 1. Clone or Download
+
+```bash
+git clone https://github.com/kore4lyf/wp-next-test.git
+cd wp-next-test
+````
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Create Environment File
+
+Copy the example file and update the values:
+
+```bash
+cp .env.example .env.local
+```
+
+#### 🔐 `.env.local`
+
+```env
+EXCHANGE_RATE_API_KEY=your_actual_key
+```
+
+### 4. Run the Development Server
+
+```bash
+npm run dev
+```
+
+Visit: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🧪 Notes
+
+* Requires WordPress running on [http://wp-headless-test.local](http://wp-headless-test.local)
+* Make sure WPGraphQL and EDD plugins are active
+
+---
+
+## 📦 Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## ✍️ Author
+
+**Korede Faleye**
+GitHub: [Kore4lyf](https://github.com/kore4lyf)
