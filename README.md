@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+After testing the api with an api key:
+https://api.exchangerate.host/latest?base=NGN&symbols=USD
 
-## Getting Started
+Result:
+{"success":false,"error":{"code":103,"type":"invalid_api_function"}}
 
-First, run the development server:
+Read their documentation and realise some changes have been made.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This worked.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://api.exchangerate.host/change?currencies=USD,NGN
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+{"success":true,"terms":"https:\/\/currencylayer.com\/terms","privacy":"https:\/\/currencylayer.com\/privacy","change":true,"start_date":"2025-06-03","end_date":"2025-06-04","source":"USD","quotes":{"USDUSD":{"start_rate":1,"end_rate":1,"change":0,"change_pct":0},"USDNGN":{"start_rate":1582.24939,"end_rate":1583.010016,"change":0.7606,"change_pct":0.0481}}}

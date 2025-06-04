@@ -5,8 +5,8 @@ import { BlogData, IPostRequest } from "./types";
 
 export async function fetchBlogData
 (): Promise<BlogData> {
-  const endpoint = 'http://wp-headless-test.local/graphql';
-  const client = new GraphQLClient(endpoint);
+  const api = 'http://wp-headless-test.local/graphql';
+  const client = new GraphQLClient(api);
 
   const query = gql`
     {

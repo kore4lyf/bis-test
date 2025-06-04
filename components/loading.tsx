@@ -1,12 +1,12 @@
 import React from 'react'
 
-const loading = () => {
+const Loading = () => {
   return (
-    <div className="flex gap-3">
-      <p>Loading Blog Posts</p>
+    <div className="flex gap-2 font-normal">
+      <p> Loading</p>
       <div className="spinner"></div>
     </div>
   )
 }
 
-export default loading
+export default Loading
